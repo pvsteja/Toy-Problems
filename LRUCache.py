@@ -7,7 +7,11 @@ class LRUCache:
         pass
     
     def get(self, index):
-        pass
+        if index >len(self.li):
+            return -1
+        else :
+            ind = self.li[index]
+            
     
     def get_cache(self):
-        pass
+        return self.li
