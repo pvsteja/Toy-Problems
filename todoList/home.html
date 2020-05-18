@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TodoList</title>
+	<h1 align="center">TODOLIST</h1>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script>
+        	document.addEventListener('DOMContentLoaded', () => {
+                document.querySelector('#search').onsubmit = () => {
+        			// const request = new XMLHttpRequest();
+        			// alert("hi")
+                	const key = document.querySelector('#newtodo').value;
+                	// alert(key)
+                	var tasks = [];
+                	tasks.push(key);
+                	// localStorage.setItem("Key", tasks);
+                	// var someVarName = localStorage.getItem("someVarKey");
+                	if (key != "") {
+                            for (let i = 0; i < tasks.length; i++) {
+                            	document.querySelector("#result1").innerHTML +=  tasks[i] + "<br>";
+
+                            }
+                            // document.querySelector('#result1').innerHTML = 
+                            
+                        }
+                    return false;
+            	};
+        	});
+        </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	    <form class="form-inline" id = "search">
+	        <input class="form-control mr-sm-2" type="text" placeholder="Create" id = "newtodo">
+	        <button class="btn btn-success" type="submit" id = "search">Createtodo</button>
+	    </form>
+	</nav>
+	<br>
+	<br>
+	<div class="container">
+        <div class="row">
+        	<div class="col-sm-6" id = "fir">
+        		<div id="result1"></div>
+        	</div>
+        </div>
+    <button class="btn btn-success" type="submit" id = "MarkId">Mark</button>
+	<button class="btn btn-success" type="submit" id = "deleteId">Delete</button>
+
+</body>
+</html>
